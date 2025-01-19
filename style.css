@@ -1,0 +1,247 @@
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --primary: #8B4513;        /* Marron foncé */
+    --secondary: #A0522D;      /* Marron clair */
+    --dark: #000080;          /* Bleu marine foncé */
+    --light: #F5F5DC;         /* Beige clair */
+    --text: #2F4F4F;          /* Bleu marine grisé */
+    --background: #FFF8DC;    /* Crème */
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --accent: #DEB887;        /* Beige plus foncé */
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+}
+
+/* En-tête principal */
+.main-header {
+    background: linear-gradient(to right, var(--dark), #000066);
+    color: var(--light);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--light);
+}
+
+/* Navigation */
+.main-nav {
+    background-color: var(--primary);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Cartes de contenu */
+.content-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary);
+}
+
+/* Titres de section */
+.section-title {
+    color: var(--light);
+    background-color: var(--dark);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Liste d'équipe */
+.team-list {
+    list-style: none;
+}
+
+.team-list li {
+    padding: 0.8rem;
+    border-left: 4px solid var(--primary);
+    background-color: var(--light);
+    margin-bottom: 0.5rem;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Étapes d'installation */
+.installation-steps {
+    margin: 1.5rem 0;
+}
+
+.installation-step {
+    background-color: var(--light);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.step-title {
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Blocs de code */
+.command-block {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.command-block code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Images et conteneurs d'outils */
+.tools-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.tool-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.tool-image:hover {
+    transform: scale(1.05);
+}
+
+/* Diagramme de Gantt */
+.gantt-container {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+}
+
+.gantt-container h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.gantt-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Configuration serveur */
+.server-config {
+    background-color: var(--light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.config-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary);
+}
+
+/* Design responsive */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .content-card {
+        padding: 1rem;
+    }
+
+    .tools-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .installation-step {
+        padding: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-card {
+    animation: fadeIn 0.5s ease-out;
+}

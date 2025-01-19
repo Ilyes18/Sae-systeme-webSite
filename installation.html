@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAE 1-03 - Installation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="main-header">
+  <h1>SAE 1-03 Installation d'un poste pour le développement</h1>
+</header>
+
+<nav class="main-nav">
+  <div class="nav-container">
+    <a href="index.html" class="nav-link">Accueil</a>
+    <a href="introduction.html" class="nav-link">Introduction</a>
+    <a href="installation.html" class="nav-link active">Installation</a>
+    <a href="organisation.html" class="nav-link">Organisation</a>
+    <a href="serveur-web.html" class="nav-link">Serveur Web</a>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="content-card">
+    <h2 class="section-title">Installation de Oracle VirtualBox</h2>
+    <p>L'installation de Oracle VirtualBox, qui est un logiciel de virtualisation, nous permet par la suite de configurer notre machine virtuelle en choisissant le système d'exploitation de notre machine. Pour notre cas, le choix s'est porté sur Debian. La suite est de choisir les caractéristiques de la machine (vue dans la partie introduction).</p>
+  </div>
+
+  <div class="content-card">
+    <h2 class="section-title">Ajout des utilisateurs et des groupes</h2>
+    <div class="installation-steps">
+      <div class="installation-step">
+        <p class="step-title">1. Se connecter comme administrateur</p>
+        <p>Pour faire cela, il faut se connecter avec l'utilisateur administrateur (« root ») ou un utilisateur ayant des privilèges sudo avec la commande su -.</p>
+        <div class="command-block">
+          <code>su -</code>
+        </div>
+      </div>
+
+      <div class="installation-step">
+        <p class="step-title">2. Création des utilisateurs</p>
+        <p>La commande useradd permet de créer un utilisateur.</p>
+        <div class="command-block">
+          <code>sudo useradd Binome1_1</code><br>
+          <code>sudo useradd Binome1_2</code>
+        </div>
+      </div>
+
+      <div class="installation-step">
+        <p class="step-title">3. Création du groupe</p>
+        <p>La commande groupadd permet de créer un groupe.</p>
+        <div class="command-block">
+          <code>sudo groupadd Binome1</code>
+        </div>
+      </div>
+
+      <div class="installation-step">
+        <p class="step-title">4. Ajout des utilisateurs au groupe</p>
+        <p>La commande usermod -aG permet d'ajouter des utilisateurs à un groupe.</p>
+        <div class="command-block">
+          <code>sudo usermod -aG Binome1 Binome1_1</code><br>
+          <code>sudo usermod -aG Binome1 Binome1_2</code>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <h2 class="section-title">Configuration de la machine virtuelle</h2>
+    <div class="installation-steps">
+      <div class="installation-step">
+        <p class="step-title">Caractéristiques de la machine virtuelle</p>
+        <ul>
+          <li>Nom : SAE systeme grp5 105</li>
+          <li>Type : Linux</li>
+          <li>Version : Ubuntu (64-bit)</li>
+          <li>Mémoire vive : 4096 MB</li>
+          <li>Processeurs : 4</li>
+          <li>Disque dur : 25 GB</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

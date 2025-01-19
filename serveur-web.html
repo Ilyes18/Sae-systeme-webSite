@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE 1-03 - Serveur Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="main-header">
+    <h1>SAE 1-03 Installation d'un poste pour le développement</h1>
+</header>
+
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="introduction.html" class="nav-link">Introduction</a>
+        <a href="installation.html" class="nav-link">Installation</a>
+        <a href="organisation.html" class="nav-link">Organisation</a>
+        <a href="serveur-web.html" class="nav-link active">Serveur Web</a>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="content-card">
+        <h2 class="section-title">Lier la machine virtuelle à WebStorm</h2>
+        <p>Nous avons lié notre machine virtuelle avec WebStorm pour faciliter le travail. En effet, cette fonctionnalité de lien de serveur nous a permis d'ajouter automatiquement les fichiers source du code sans devoir effectuer de transferts inutiles et superflus.</p>
+
+        <div class="installation-step">
+            <p class="step-title">Configuration de WebStorm</p>
+            <ul>
+                <li>Type: SFTP</li>
+                <li>SSH configuration: miaou@192.168.1.29:22</li>
+                <li>Root path: /home/miaou/monsite.fr</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2 class="section-title">Configuration du serveur web</h2>
+        <div class="server-config">
+            <div class="config-item">
+                <h3>ServerAdmin</h3>
+                <div class="command-block">
+                    <code>ServerAdmin webmaster@localhost</code>
+                </div>
+            </div>
+
+            <div class="config-item">
+                <h3>DocumentRoot</h3>
+                <div class="command-block">
+                    <code>DocumentRoot /var/www/html</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2 class="section-title">Tests et vérification</h2>
+        <div class="installation-steps">
+            <div class="installation-step">
+                <p class="step-title">Vérification de la configuration</p>
+                <p>Après avoir configuré le serveur web, nous avons effectué plusieurs tests pour nous assurer que tout fonctionne correctement :</p>
+                <ul>
+                    <li>Test de la connexion SSH</li>
+                    <li>Vérification des permissions des dossiers</li>
+                    <li>Test du déploiement automatique</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
