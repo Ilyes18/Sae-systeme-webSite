@@ -3,48 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAE 1-03 - Accueil</title>
+    <title>SAE 1.03 - Installation d'un poste pour le développement</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="main-header">
-    <h1>SAE 1-03 Installation d'un poste pour le développement</h1>
+    <h1>SAE 1.03 Installation d'un poste pour le développement</h1>
 </header>
 
 <nav class="main-nav">
     <div class="nav-container">
-        <a href="index.html" class="nav-link active">Accueil</a>
-        <a href="introduction.html" class="nav-link">Introduction</a>
-        <a href="installation.html" class="nav-link">Installation</a>
-        <a href="organisation.html" class="nav-link">Organisation</a>
-        <a href="serveur-web.html" class="nav-link">Serveur Web</a>
+        <a href="#definitions" class="nav-link">Définitions</a>
+        <a href="#differences" class="nav-link">Types d'outils</a>
+        <a href="#installation" class="nav-link">Installation VM</a>
+        <a href="#utilisation" class="nav-link">Utilisation</a>
+        <a href="#serveur" class="nav-link">Serveur Web</a>
     </div>
 </nav>
 
 <main class="container">
-    <div class="content-card">
-        <h2 class="section-title">Notre Équipe</h2>
-        <p>Pour remplir cette mission, notre équipe est composée de :</p>
-        <ul class="team-list">
-            <li>Ilyes </li>
-            <li>Maxence </li>
-            <li>Titouan </li>
-            <li>Zakaria </li>
-        </ul>
-    </div>
+    <section id="definitions" class="content-card">
+        <h2 class="section-title">1. Définition de la virtualisation</h2>
+        <p>La virtualisation constitue une avancée technologique permettant de créer une ou plusieurs machines virtuelles à partir d'une infrastructure physique existante. Un hyperviseur joue le rôle crucial d'intermédiaire entre les ressources physiques et virtuelles, établissant une gestion efficace des propriétés de chaque machine virtuelle selon les besoins spécifiques du projet.</p>
 
-    <div class="content-card">
-        <h2 class="section-title">Notre Mission</h2>
-        <p>Le but de cette SAÉ (situation d'apprentissage et d'évaluation) est dans un premier temps de s'initier à la technique de virtualisation en installant un environnement de virtualisation et en créant une machine virtuelle. Dans un second temps, il s'agit d'installer un serveur web et de l'utiliser pour mettre en ligne le rapport de la SAÉ.</p>
-    </div>
-
-    <div class="content-card">
-        <h2 class="section-title">Outils Utilisés</h2>
-        <div class="tools-container">
-            <img src="/api/placeholder/150/150" alt="VirtualBox Logo" class="tool-image">
-            <img src="/api/placeholder/150/150" alt="WebStorm Logo" class="tool-image">
+        <div class="definition-details">
+            <h3>Types d'hyperviseurs</h3>
+            <ul>
+                <li><strong>Type 1 (« bare metal »)</strong> : S'exécute directement sur le matériel de l'hôte.</li>
+                <li><strong>Type 2 (« hébergé »)</strong> : Fonctionne comme une couche logicielle sur un système d'exploitation existant.</li>
+            </ul>
         </div>
-    </div>
+    </section>
+
+    <section id="differences" class="content-card">
+        <h2 class="section-title">2. Différences entre les outils</h2>
+
+        <div class="concept-explanation">
+            <h3>Émulateur</h3>
+            <p>Un émulateur reproduit fidèlement le comportement d'un système sur une plateforme différente, assurant une compatibilité complète avec le système d'origine. Il simule à la fois le matériel et l'interface logicielle.</p>
+        </div>
+
+        <div class="concept-explanation">
+            <h3>Simulateur</h3>
+            <p>Un simulateur se concentre sur la reproduction du comportement d'un système dans un environnement contrôlé, sans nécessairement viser une compatibilité exacte. Il est particulièrement utile pour l'analyse et la modélisation de systèmes complexes.</p>
+        </div>
+
+        <div class="concept-explanation">
+            <h3>Outil de virtualisation</h3>
+            <p>Les outils de virtualisation permettent la création et la gestion de machines virtuelles indépendantes sur une même machine physique, optimisant ainsi l'utilisation des ressources matérielles tout en assurant l'isolation entre les différents environnements.</p>
+        </div>
+    </section>
+
+    <section id="installation" class="content-card">
+        <h2 class="section-title">3. Installation de la machine virtuelle</h2>
+
+        <p>Nous avons choisi VirtualBox comme solution de virtualisation et Ubuntu comme système d'exploitation, privilégiant la simplicité d'utilisation et la stabilité.</p>
+
+        <div class="installation-steps">
+            <div class="step">
+                <h3>Configuration initiale</h3>
+                <ul>
+                    <li>Nom : SAE systeme grp5 105</li>
+                    <li>Type : Linux</li>
+                    <li>Version : Ubuntu (64-bit)</li>
+                </ul>
+                <div class="image-container">
+                    
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Ressources allouées</h3>
+                <ul>
+                    <li>Mémoire RAM : 4 Go</li>
+                    <li>Processeurs : 4 cœurs</li>
+                    <li>Disque dur virtuel : 25 Go</li>
+                </ul>
+                <div class="image-container">
+                    [Emplacement image 2]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="utilisation" class="content-card">
+        <h2 class="section-title">4. Personnalisation et utilisation</h2>
+
+        <div class="configuration-steps">
+            <h3>Création des utilisateurs</h3>
+            <div class="command-block">
+                <code>sudo useradd Binome1_1</code>
+                <code>sudo useradd Binome1_2</code>
+            </div>
+
+            <h3>Gestion des groupes</h3>
+            <div class="command-block">
+                <code>sudo groupadd Binome1</code>
+                <code>sudo usermod -aG Binome1 Binome1_1</code>
+                <code>sudo usermod -aG Binome1 Binome1_2</code>
+            </div>
+        </div>
+    </section>
+
+    <section id="serveur" class="content-card">
+        <h2 class="section-title">5. Configuration du serveur web</h2>
+
+        <div class="server-setup">
+            <h3>Installation d'Apache2</h3>
+            <div class="command-block">
+                <code>sudo apt install apache2</code>
+                <code>sudo systemctl status apache2</code>
+            </div>
+
+            <h3>Configuration WebStorm</h3>
+            <p>Configuration du déploiement SFTP pour une intégration transparente avec la machine virtuelle :</p>
+            <ul>
+                <li>Type : SFTP</li>
+                <li>SSH Configuration : Personnalisée selon l'environnement</li>
+                <li>Root Path : /var/www/html</li>
+            </ul>
+            <div class="image-container">
+                [Emplacement image configuration WebStorm]
+            </div>
+        </div>
+    </section>
 </main>
 </body>
 </html>
